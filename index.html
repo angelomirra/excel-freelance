@@ -139,7 +139,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            /*gap: 40px;*/
         }
         .hero-text {
             flex: 1;
@@ -150,10 +150,25 @@
             max-width: 45%;
             text-align: center;
         }
+        /* MODIFICATO: Stili per la nuova caption sotto la foto */
         .hero-image-description {
             color: #555;
+            margin-top: 15px; /* Aumentato per dare più spazio */
+            line-height: 1.5;
+        }
+        .description-name {
+            display: block; /* Mette il nome su una riga separata */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-style: normal; /* Rimuove il corsivo dal nome */
+            color: var(--colore-secondario);
+            font-size: 1.1rem;
+        }
+        .description-title {
+            display: block; /* Mette il titolo su una riga separata */
             font-style: italic;
-            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #555;
         }
         .hero-image img {
             max-width: 100%;
@@ -246,23 +261,45 @@
         }
         
                 /* --- NUOVO: Stili per la testimonianza nell'hero --- */
-        .hero-testimonial {
-            margin-top: 25px;
-            padding-left: 20px;
-            border-left: 3px solid var(--colore-primario);
-            font-size: 0.95rem;
-        }
-        .hero-testimonial-quote {
-            font-style: italic;
-            color: #555;
-            margin: 0;
-        }
-        .hero-testimonial-author {
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            color: var(--colore-secondario);
-            margin-top: 5px;
-        }
+/* --- MODIFICATO: Stili per la testimonianza con foto nell'hero --- */
+.hero-testimonial {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Crea spazio tra la foto e il testo */
+    margin-top: 25px;
+    background-color: rgba(255, 255, 255, 0.6); /* Sfondo leggermente bianco per leggibilità */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.hero-testimonial-image {
+    flex-shrink: 0; /* Impedisce alla foto di rimpicciolirsi */
+    height: 60px;
+}
+
+.hero-testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine riempia senza deformarsi */
+    border-radius: 50%;
+    border: 2px solid var(--colore-primario); /* Bordo verde per coerenza stilistica */
+}
+
+.hero-testimonial-quote {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.hero-testimonial-author {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: var(--colore-secondario);
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
 
         .hero .post-cta-note {
             font-size: 0.9rem;
@@ -566,33 +603,73 @@
             color:orange;
         }
 
-        /* --- NUOVO: Stili per la sezione FAQ --- */
+        /* --- MODIFICATO: Stili per la sezione FAQ Espandibile --- */
         #faq {
             padding: 80px 20px;
-            /*background-color: var(--colore-sfondo);*/
+            background-color: #fff; 
         }
         .faq-grid {
             max-width: 800px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px; /* Leggermente ridotto per un look più compatto */
         }
+
+        /* Stile per il contenitore <details> */
         .faq-item {
             background-color: #fff;
-            border: 1px solid #eee;
+            border: 1px solid #e0e0e0;
             border-left: 4px solid var(--colore-primario);
-            padding: 20px 25px;
             border-radius: 0 8px 8px 0;
+            transition: background-color 0.2s ease;
         }
-        .faq-item h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
+        .faq-item[open] {
+            background-color: #fdfdfd; /* Cambia leggermente colore quando aperto */
+        }
+
+        /* Stile per la domanda <summary> */
+        .faq-item summary {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--colore-secondario);
+            padding: 20px 25px;
+            cursor: pointer;
+            list-style: none; /* Rimuove la freccia di default */
+            position: relative;
+            transition: color 0.2s ease;
         }
+        .faq-item summary:hover {
+            color: var(--colore-primario);
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none; /* Rimuove la freccia di default (per Safari/Chrome) */
+        }
+
+        /* Aggiunge l'icona + / - custom */
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--colore-primario);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Ruota l'icona quando l'elemento è aperto */
+        .faq-item[open] summary::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        /* Stile per la risposta <p> */
         .faq-item p {
-            margin-bottom: 0;
             line-height: 1.7;
+            margin: 0;
+            padding: 0 25px 20px 25px; /* Padding solo per la risposta */
         }
         
         /* --- Sezione Contatti --- */
@@ -670,7 +747,7 @@
             .hero-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 30px; /* Ripristinato gap per mobile */
+                gap: 40px; /* Ripristinato gap per mobile */
             }
             .hero-text {
                 max-width: 100%;
@@ -738,6 +815,10 @@
             {
                 padding: 4px 5px;
             }
+            .faq-item summary::after
+            {
+                right: 9px;
+            }
         }
 
     </style>
@@ -746,7 +827,7 @@
     <!-- NAVIGAZIONE STICKY -->
     <nav class="main-nav">
         <div class="container nav-container">
-            <div class="nav-brand"><a href="#">Angelo Mirra | Consulente Excel</a></div>
+            <div class="nav-brand"><a href="#">Angelo Mirra | Specialista Excel</a></div>
             <div class="nav-links">
                 <a href="#servizi">Servizi</a>
                 <a href="#testimonianze">Dicono di me</a>
@@ -779,11 +860,16 @@
                         <span class="star">★</span> Oltre 100 progetti completati <span class="star">★</span> Già scelto da 53+ aziende
                     </p>
 
-                    <!-- NUOVO: Testimonianza chiave per fiducia immediata -->
-                    <div class="hero-testimonial">
-                        <p class="hero-testimonial-quote">"Ha risolto un problema che ci bloccava da mesi in meno di 24 ore. Incredibile."</p>
+                <!-- MODIFICATO: Testimonianza chiave ora con foto -->
+                <div class="hero-testimonial">
+                    <div class="hero-testimonial-image">
+                        <img src="./testimonial1.jpg" alt="Foto di Luca Rossi, cliente soddisfatto">
+                    </div>
+                    <div class="hero-testimonial-content">
+                        <p class="hero-testimonial-quote">"Angelo ha risolto un problema che ci bloccava da settimane in meno di 24 ore. Ottimo!"</p>
                         <p class="hero-testimonial-author">- Luca R., Responsabile Amministrativo</p>
                     </div>
+                </div>
 
                 </div>
                 <div class="hero-image">
@@ -791,7 +877,11 @@
                         <img src="./foto.jpg" alt="Angelo Mirra, Consulente Excel professionale">
                         <img src="excel.png" alt="Logo Excel" class="excel-icon">
                     </div>
-                    <p class="hero-image-description">Angelo Mirra<br>Consulente in Excel, VBA e Macro<br>per automatizzare il tuo lavoro</p>
+                    <!-- MODIFICATO: Caption sotto la foto più d'impatto -->
+                    <div class="hero-image-description">
+                        <span class="description-name">Angelo Mirra</span>
+                        <span class="description-title">Il Tuo Specialista nell'Automazione Excel</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -997,7 +1087,7 @@
                         <img src="./testimonial1.jpg" alt="Foto di Luca Rossi">
                     </div>
                     <div class="testimonial-content">
-                        <p style="font-weight: bold;font-size: 1.3rem;">"Professionale e velocissimo!"</p>
+                        <p style="font-weight: bold;font-size: 1.3rem;">"Professionale e veloce!"</p>
                         <p>"Ha automatizzato il nostro report settimanale, facendoci risparmiare 5 ore di lavoro ogni lunedì."</p>
                         <p class="autore">- Luca Rossi, Responsabile Amministrativo </p>
                         <span class="star">&#9733 &#9733 &#9733 &#9733 &#9733</span>
@@ -1032,23 +1122,29 @@
         <section id="faq">
             <div class="container">
                 <h2>Domande Frequenti</h2>
+                <!-- MODIFICATO: FAQ ora espandibili -->
                 <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3>Quanto costa il servizio?</h3>
+
+                    <details class="faq-item">
+                        <summary>Quanto costa il servizio?</summary>
                         <p>Ogni progetto è diverso. Dopo aver analizzato la tua richiesta, ti fornirò un preventivo fisso e trasparente. Per problemi semplici, la soluzione può costare anche solo poche decine di euro. Il mio obiettivo è farti risparmiare molto più di quanto investi.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Quali sono i tempi di consegna?</h3>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Quali sono i tempi di consegna?</summary>
                         <p>Dipende dalla complessità. Molte richieste (correzioni di bug, piccole automazioni) vengono risolte in 24-48 ore. Per progetti più grandi, i tempi saranno chiaramente definiti nel preventivo.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Cosa succede se non sono soddisfatto?</h3>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Cosa succede se non sono soddisfatto?</summary>
                         <p>La mia priorità è la tua soddisfazione. Offro una "Garanzia di Risultato": se la soluzione non funziona come concordato, la modifico finché non sei soddisfatto o non paghi nulla. Semplice e senza rischi per te.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>È necessario incontrarsi di persona?</h3>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>È necessario incontrarsi di persona?</summary>
                         <p>No, lavoro con clienti in tutta Italia da remoto. Gestiamo tutto tramite email, telefono o videochiamata. È più efficiente e veloce per entrambi.</p>
-                    </div>
+                    </details>
+
                 </div>
             </div>
         </section>
