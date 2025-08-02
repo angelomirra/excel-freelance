@@ -146,7 +146,7 @@
             max-width: 100%;
             height: auto;
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-	    border-radius: 50%;
+	        border-radius: 50%;
         }
         .hero h1 {
             font-size: 3rem;
@@ -173,7 +173,11 @@
             padding: 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
+        .flag::before {
+            content: "✔"; /* oppure "\2714" */
+            color: green;  /* colore del simbolo */
+            margin-right: 5px;
+        }
         /* --- Pulsante CTA --- */
         .cta-button {
             display: inline-block;
@@ -199,6 +203,7 @@
             font-size: 0.9rem;
             color: #666;
             margin-top: 15px;
+            display: block;
         }
         
         /* --- Sezione Clienti --- */
@@ -266,6 +271,71 @@
         .servizio-card h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
+        }
+
+        /* --- Sezione Casi di Studio --- */
+        #casi-studio {
+            padding: 80px 20px;
+            background-color: var(--colore-sfondo); /* Usa lo stesso sfondo dei servizi per coerenza */
+        }
+
+        .casi-studio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .caso-studio-card {
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid var(--colore-primario); /* Bordo laterale colorato per evidenza */
+            border-radius: 8px;
+            padding: 25px 30px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .caso-studio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .caso-studio-card h3 {
+            font-size: 1.5rem;
+            color: var(--colore-secondario);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .caso-studio-card .cliente {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .caso-studio-card .dettagli p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .caso-studio-card .dettagli p:last-child {
+            margin-bottom: 0;
+        }
+
+        .caso-studio-card strong {
+            color: var(--colore-secondario);
+            font-weight: 600;
+        }
+
+        .risultato-evidenziato {
+            background-color: #e8f5e9; /* Un verde molto chiaro per non essere invadente */
+            color: var(--colore-primario);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
         }
 
         /* --- Sezione Chi Sono --- */
@@ -456,7 +526,7 @@
             flex-direction: column;
             gap: 15px;
         }
-        #contatti input, #contatti textarea {
+        #contatti input, #contatti textarea, #contatti select { /* <-- Aggiungi #contatti select qui */
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -578,7 +648,8 @@
 			            Automatizzo il tuo Excel e <span class="evidenziato">risparmi ore di lavoro ogni settimana</span>.
                     </p>
                     <a href="#contatti" class="cta-button">Sì, Voglio Un Aiuto</a>
-		    <p class="post-cta-note">*In 2 anni ho aiutato oltre 53 tra aziende e professionisti a risparmiare tempo e risorse.
+                    <span class="post-cta-note flag">Analisi rapida e preventivo gratuito</span>
+		            <span class="post-cta-note flag" style="margin-top: 2px;">Già scelto da oltre 53 aziende e professionisti.</span>
                 </div>
                 <div class="hero-image">
                     <div class="image-wrapper">
@@ -655,6 +726,51 @@
                         <h3>Soluzioni Aziendali Complete</h3>
                         <p>Dalla gestione magazzino alla creazione di piccoli CRM, realizzo applicativi basati su Excel.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================== -->
+        <!-- =     SEZIONE CASI DI STUDIO     = -->
+        <!-- ================================== -->
+        <section id="casi-studio">
+            <div class="container">
+                <h2>Come Ho Aiutato Altri Come Te</h2>
+                <div class="casi-studio-grid">
+
+                    <!-- Caso di Studio 1 -->
+                    <div class="caso-studio-card">
+                        <h3>Automazione Report Mensile</h3>
+                        <p class="cliente"><strong>Cliente:</strong> Studio di Consulenza Amministrativa</p>
+                        <div class="dettagli">
+                            <p><strong>Problema:</strong> L'unione manuale di 15 file Excel richiedeva 8 ore ogni mese, con alto rischio di errori di copia-incolla.</p>
+                            <p><strong>Soluzione:</strong> Ho sviluppato una macro VBA che, con un solo click, importa, consolida e formatta i dati, generando un report PDF pronto per l'invio.</p>
+                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Riduzione del tempo da 8 ore a 5 minuti</span>, azzeramento degli errori e reportistica sempre puntuale.</p>
+                        </div>
+                    </div>
+
+                    <!-- Caso di Studio 2 -->
+                    <div class="caso-studio-card">
+                        <h3>Dashboard KPI Commerciale</h3>
+                        <p class="cliente"><strong>Cliente:</strong> Azienda Manifatturiera</p>
+                        <div class="dettagli">
+                            <p><strong>Problema:</strong> I dati di vendita erano sparsi su più fogli. La direzione non aveva una visione chiara e immediata delle performance.</p>
+                            <p><strong>Soluzione:</strong> Ho creato una dashboard interattiva con grafici dinamici e filtri per anno, prodotto e agente, che si aggiorna automaticamente dai dati grezzi.</p>
+                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Decisioni strategiche più rapide</span> e basate su dati visuali aggiornati in tempo reale durante le riunioni.</p>
+                        </div>
+                    </div>
+
+                    <!-- Caso di Studio 3 -->
+                    <div class="caso-studio-card">
+                        <h3>Gestione Semplificata Magazzino</h3>
+                        <p class="cliente"><strong>Cliente:</strong> Piccolo E-commerce</p>
+                        <div class="dettagli">
+                            <p><strong>Problema:</strong> Tracciare entrate, uscite e giacenze con un file Excel complesso e lento che spesso si bloccava.</p>
+                            <p><strong>Soluzione:</strong> Ho ristrutturato il file, ottimizzato le formule e creato maschere di inserimento dati (UserForm) per guidare l'operatore, prevenendo errori.</p>
+                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Inventario sempre corretto</span>, file più veloce del 70% e riduzione drastica degli errori di inserimento.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -809,6 +925,17 @@
                 <form action="https://formsubmit.co/angelo.ss@hotmail.it" method="POST">
                     <input type="text" name="nome" placeholder="Il tuo nome" required>
                     <input type="email" name="email" placeholder="La tua email" required>
+
+                    <!-- NUOVO CAMPO A TENDINA -->
+                    <select name="esigenza" required>
+                        <option value="" disabled selected>Di cosa hai bisogno?</option>
+                        <option value="Creazione Macro da zero">Creazione Macro da zero</option>
+                        <option value="Correzione/Debug di un file esistente">Correzione/Debug di un file esistente</option>
+                        <option value="Creazione Dashboard Interattiva">Creazione Dashboard Interattiva</option>
+                        <option value="Consulenza o Formazione">Consulenza o Formazione</option>
+                        <option value="Altro">Altro (descrivi nel messaggio)</option>
+                    </select>
+
                     <textarea name="messaggio" placeholder="Descrivi qui il tuo problema o la tua necessità..." required></textarea>
                     <button type="submit" class="cta-button" style="border:none;">Sì, Voglio Un Aiuto</button>
                 </form>
