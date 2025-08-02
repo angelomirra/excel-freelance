@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiesta Inviata | Angelo Mirra - Consulente Excel</title>
+    <meta name="description" content="Grazie per avermi contattato. Ho ricevuto la tua richiesta e ti risponderò al più presto.">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Reset e Stili Globali --- */
+        :root {
+            --colore-primario: #107C41; /* Verde Excel */
+            --colore-secondario: #2c3e50; /* Blu scuro/Grigio */
+            --colore-sfondo: #f4f6f9;
+            --colore-testo: #333;
+            --colore-cta: #ff8c00; /* Arancione per contrasto */
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: var(--colore-testo);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--colore-secondario);
+            font-weight: 700;
+        }
+        
+        /* --- Stili per la Navigazione Sticky --- */
+        .main-nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+        .main-nav:hover {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .nav-brand {
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: var(--colore-secondario);
+        }
+        .nav-links a {
+            color: var(--colore-testo);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+        .nav-links .nav-cta {
+            background-color: var(--colore-cta);
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links .nav-cta:hover {
+            background-color: #e67e22;
+            color: #fff;
+        }
+
+        /* --- Pulsante CTA --- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--colore-cta);
+            color: #fff;
+            padding: 15px 50px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* --- Sezione di Ringraziamento --- */
+        #ringraziamento {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--colore-sfondo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        #ringraziamento .icona-successo {
+            color: var(--colore-primario);
+            margin-bottom: 25px;
+        }
+        #ringraziamento h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        #ringraziamento p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #555;
+        }
+        #ringraziamento .cta-button {
+            background-color: var(--colore-secondario); /* Colore diverso per distinguere l'azione */
+        }
+        #ringraziamento .cta-button:hover {
+            background-color: #3e5771; /* Versione più chiara del secondario */
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1e2a38;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .nav-brand {
+                display: none;
+            }
+            .nav-container {
+                justify-content: center;
+            }
+            .nav-links a {
+                margin: 0 5px;
+            }
+            #ringraziamento h1 {
+                font-size: 2rem;
+            }
+            #ringraziamento p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGAZIONE STICKY -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-brand">Angelo Mirra | Consulente Excel</div>
+            <div class="nav-links">
+                <a href="index.html#servizi">Servizi</a>
+                <a href="index.html#testimonianze">Dicono di me</a>
+                <a href="index.html#contatti" class="nav-cta">Nuova Richiesta</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEZIONE DI RINGRAZIAMENTO -->
+    <main>
+        <section id="ringraziamento">
+            <div class="container">
+                <div class="icona-successo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                </div>
+                
+                <h1>Grazie! Richiesta inviata con successo.</h1>
+                <p>
+                    Ho ricevuto il tuo messaggio e ti risponderò <strong>entro 1 ora lavorativa</strong> all'indirizzo email che hai fornito.
+                    <br>Controlla la tua casella di posta (e per sicurezza, anche la cartella Spam).
+                </p>
+                <a href="index.html" class="cta-button">Torna alla Home Page</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Angelo Mirra - Specialista in Excel, VBA e Macro | P.IVA 05945478801</p>
+        </div>
+    </footer>
+
+</body>
+</html>
