@@ -158,6 +158,27 @@
             color: #555;
             margin-bottom: 30px;
         }
+         /* --- MODIFICA: Stili per la nuova lista di benefici --- */
+        .hero-benefits {
+            list-style: none;
+            padding-left: 0;
+            margin: 25px 0 30px 0;
+        }
+        .hero-benefits li {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .hero-benefits li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1rem;
+        }
+        /* --- FINE MODIFICA --- */
         .image-wrapper {
             position: relative;
             display: inline-block;
@@ -198,6 +219,19 @@
         .chi-sono-cta {
             margin-top: 20px;
         }
+        
+        /* --- MODIFICA: Stile per la riga di fiducia sotto il CTA --- */
+        .hero-trust-signal {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        .hero-trust-signal .star {
+            color: #f39c12;
+            font-size: 1rem;
+        }
+        /* --- FINE MODIFICA --- */
 
         .hero .post-cta-note {
             font-size: 0.9rem;
@@ -637,23 +671,33 @@
         </div>
     </nav>
 
-    <!-- SEZIONE HERO -->
+    <!-- ============================================= -->
+    <!-- SEZIONE HERO - MODIFICATA PER MAGGIOR IMPATTO -->
+    <!-- ============================================= -->
     <header class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Risolvo i Tuoi Problemi con Excel e VBA. Subito.</h1>
-                    <p class="sottotitolo">
-                        Dalla macro che non funziona all'automazione di complessi processi aziendali.
-			            Automatizzo il tuo Excel e <span class="evidenziato">risparmi ore di lavoro ogni settimana</span>.
-                    </p>
+                    
+                    <!-- MODIFICA: Sottotitolo trasformato in lista benefici -->
+                    <ul class="hero-benefits">
+                        <li><strong>Automatizza i task ripetitivi</strong> e risparmia ore di lavoro ogni settimana.</li>
+                        <li><strong>Elimina gli errori</strong> di copia-incolla e ottieni dati sempre affidabili.</li>
+                        <li><strong>Trasforma fogli di calcolo complessi</strong> in strumenti efficienti e facili da usare.</li>
+                    </ul>
+                    <!-- FINE MODIFICA -->
+
                     <a href="#contatti" class="cta-button">Sì, Voglio Un Aiuto</a>
-                    <span class="post-cta-note flag">Analisi rapida e preventivo gratuito</span>
-		            <span class="post-cta-note flag" style="margin-top: 2px;">Già scelto da oltre 53 aziende e professionisti.</span>
+
+                    <!-- MODIFICA: Segnale di fiducia più evidente -->
+                    <p class="hero-trust-signal">
+                        <span class="star">★</span> Preventivo Gratuito e Veloce <span class="star">★</span> Già scelto da oltre 53 aziende e professionisti
+                    </p>
+                    <!-- FINE MODIFICA -->
                 </div>
                 <div class="hero-image">
                     <div class="image-wrapper">
-                        <!-- Assicurati che questa sia una tua foto professionale -->
                         <img src="./foto.jpg" alt="Angelo Mirra, Consulente Excel professionale">
                         <img src="excel.png" alt="Logo Excel" class="excel-icon">
                     </div>
@@ -662,6 +706,7 @@
             </div>
         </div>
     </header>
+
 
     <main>
         <!-- Sezione Loghi Clienti -->
