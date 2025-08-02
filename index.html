@@ -260,46 +260,45 @@
             font-size: 1rem;
         }
         
-                /* --- NUOVO: Stili per la testimonianza nell'hero --- */
-/* --- MODIFICATO: Stili per la testimonianza con foto nell'hero --- */
-.hero-testimonial {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Crea spazio tra la foto e il testo */
-    margin-top: 25px;
-    background-color: rgba(255, 255, 255, 0.6); /* Sfondo leggermente bianco per leggibilità */
-    padding: 10px;
-    border-radius: 8px;
-}
+        /* --- MODIFICATO: Stili per la testimonianza con foto nell'hero --- */
+        .hero-testimonial {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Crea spazio tra la foto e il testo */
+            margin-top: 25px;
+            background-color: rgba(255, 255, 255, 0.6); /* Sfondo leggermente bianco per leggibilità */
+            padding: 10px;
+            border-radius: 8px;
+        }
 
-.hero-testimonial-image {
-    flex-shrink: 0; /* Impedisce alla foto di rimpicciolirsi */
-    height: 60px;
-}
+        .hero-testimonial-image {
+            flex-shrink: 0; /* Impedisce alla foto di rimpicciolirsi */
+            height: 60px;
+        }
 
-.hero-testimonial-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Assicura che l'immagine riempia senza deformarsi */
-    border-radius: 50%;
-    border: 2px solid var(--colore-primario); /* Bordo verde per coerenza stilistica */
-}
+        .hero-testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Assicura che l'immagine riempia senza deformarsi */
+            border-radius: 50%;
+            border: 1px solid black;
+        }
 
-.hero-testimonial-quote {
-    font-style: italic;
-    color: #555;
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
+        .hero-testimonial-quote {
+            font-style: italic;
+            color: #555;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
 
-.hero-testimonial-author {
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    color: var(--colore-secondario);
-    margin-top: 5px;
-    font-size: 0.9rem;
-}
+        .hero-testimonial-author {
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            color: var(--colore-secondario);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
 
         .hero .post-cta-note {
             font-size: 0.9rem;
@@ -312,8 +311,8 @@
         #clienti {
             padding: 40px 10px;
             background-color: #fff;
-	    margin: 0 auto;
-  	    max-width: 1100px;
+	        margin: 0 auto;
+  	        max-width: 1100px;
         }
 
         .clienti-titolo {
@@ -346,7 +345,6 @@
         /* --- Sezione Servizi --- */
         #servizi {
             padding: 80px 20px;
-            background-color: var(--colore-sfondo);
         }
         .servizi-grid {
             display: grid;
@@ -500,6 +498,7 @@
             width: 100%;
             height: auto;
             border-radius: 8px;
+            border: 1px solid black;
         }
         .fa-per-te-text {
             flex: 1;
@@ -606,7 +605,7 @@
         /* --- MODIFICATO: Stili per la sezione FAQ Espandibile --- */
         #faq {
             padding: 80px 20px;
-            background-color: #fff; 
+            background-color: var(--colore-sfondo);
         }
         .faq-grid {
             max-width: 800px;
@@ -904,6 +903,51 @@
 		</div>
         </section> 
 
+        <!-- ================================== -->
+        <!-- =     SEZIONE CASI DI STUDIO     = -->
+        <!-- ================================== -->
+        <section id="casi-studio">
+            <div class="container">
+                <h2>Come Ho Aiutato Altri Come Te (Casi Reali)</h2>
+                <div class="casi-studio-grid">
+
+                    <!-- Caso di Studio 1 -->
+                    <div class="caso-studio-card">
+                        <h3>Automazione Report Mensile</h3>
+                        <p class="cliente"><strong>Cliente:</strong> Studio di Consulenza Amministrativa</p>
+                        <div class="dettagli">
+                            <p><strong>Problema:</strong> L'unione manuale di 15 file Excel richiedeva 8 ore ogni mese, con alto rischio di errori di copia-incolla.</p>
+                            <p><strong>Soluzione:</strong> Ho sviluppato una macro VBA che, con un solo click, importa, consolida e formatta i dati, generando un report PDF pronto per l'invio.</p>
+                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Riduzione del tempo da 8 ore a 5 minuti</span>, azzeramento degli errori e reportistica sempre puntuale.</p>
+                        </div>
+                    </div>
+
+                    <!-- Caso di Studio 2 -->
+                    <div class="caso-studio-card">
+                        <h3>Dashboard KPI Commerciale</h3>
+                        <p class="cliente"><strong>Cliente:</strong> Azienda Manifatturiera</p>
+                        <div class="dettagli">
+                            <p><strong>Problema:</strong> I dati di vendita erano sparsi su più fogli. La direzione non aveva una visione chiara e immediata delle performance.</p>
+                            <p><strong>Soluzione:</strong> Ho creato una dashboard interattiva con grafici dinamici e filtri per anno, prodotto e agente, che si aggiorna automaticamente dai dati grezzi.</p>
+                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Decisioni strategiche più rapide</span> e basate su dati visuali aggiornati in tempo reale durante le riunioni.</p>
+                        </div>
+                    </div>
+
+                    <!-- Caso di Studio 3 -->
+                    <div class="caso-studio-card">
+                        <h3>Gestione Semplificata Magazzino</h3>
+                        <p class="cliente"><strong>Cliente:</strong> Piccolo E-commerce</p>
+                        <div class="dettagli">
+                            <p><strong>Problema:</strong> Tracciare entrate, uscite e giacenze con un file Excel complesso e lento che spesso si bloccava.</p>
+                            <p><strong>Soluzione:</strong> Ho ristrutturato il file, ottimizzato le formule e creato maschere di inserimento dati (UserForm) per guidare l'operatore, prevenendo errori.</p>
+                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Inventario sempre corretto</span>, file più veloce del 70% e riduzione drastica degli errori di inserimento.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- SEZIONE SERVIZI con Icone SVG Professionali -->
         <section id="servizi">
             <div class="container">
@@ -955,47 +999,25 @@
             </div>
         </section>
 
-        <!-- ================================== -->
-        <!-- =     SEZIONE CASI DI STUDIO     = -->
-        <!-- ================================== -->
-        <section id="casi-studio">
+        <!-- SEZIONE "FA PER TE SE..." (AGGIORNATA CON IMMAGINE DEL PROBLEMA) -->
+        <section id="fa-per-te">
             <div class="container">
-                <h2>Come Ho Aiutato Altri Come Te (Casi Reali)</h2>
-                <div class="casi-studio-grid">
-
-                    <!-- Caso di Studio 1 -->
-                    <div class="caso-studio-card">
-                        <h3>Automazione Report Mensile</h3>
-                        <p class="cliente"><strong>Cliente:</strong> Studio di Consulenza Amministrativa</p>
-                        <div class="dettagli">
-                            <p><strong>Problema:</strong> L'unione manuale di 15 file Excel richiedeva 8 ore ogni mese, con alto rischio di errori di copia-incolla.</p>
-                            <p><strong>Soluzione:</strong> Ho sviluppato una macro VBA che, con un solo click, importa, consolida e formatta i dati, generando un report PDF pronto per l'invio.</p>
-                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Riduzione del tempo da 8 ore a 5 minuti</span>, azzeramento degli errori e reportistica sempre puntuale.</p>
-                        </div>
+                <h2>Ti Riconosci in Questa Situazione?</h2>
+                <div class="fa-per-te-content">
+                    <div class="fa-per-te-image">
+                        <!-- Salva l'immagine nella cartella 'immagini/' -->
+                        <img src="foto2.jpg" alt="Utente frustrato di fronte a un errore di Excel">
                     </div>
+                    <div class="fa-per-te-text">
+                        <h3>Questo servizio è la soluzione se...</h3>
+                        <ul>
+                            <li>Passi ore a copiare e incollare dati e pensi "Deve esserci un modo migliore".</li>
+                            <li>Il tuo file Excel aziendale è lento, pieno di errori e nessuno ha il coraggio di toccarlo.</li>
+                            <li>Hai bisogno di report e grafici chiari, ma crearli a mano ti porta via troppo tempo.</li>
+                            <li>Senti che stai usando solo il 10% del potenziale di Excel e vorresti automatizzare tutto.</li>
+                        </ul>
 
-                    <!-- Caso di Studio 2 -->
-                    <div class="caso-studio-card">
-                        <h3>Dashboard KPI Commerciale</h3>
-                        <p class="cliente"><strong>Cliente:</strong> Azienda Manifatturiera</p>
-                        <div class="dettagli">
-                            <p><strong>Problema:</strong> I dati di vendita erano sparsi su più fogli. La direzione non aveva una visione chiara e immediata delle performance.</p>
-                            <p><strong>Soluzione:</strong> Ho creato una dashboard interattiva con grafici dinamici e filtri per anno, prodotto e agente, che si aggiorna automaticamente dai dati grezzi.</p>
-                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Decisioni strategiche più rapide</span> e basate su dati visuali aggiornati in tempo reale durante le riunioni.</p>
-                        </div>
                     </div>
-
-                    <!-- Caso di Studio 3 -->
-                    <div class="caso-studio-card">
-                        <h3>Gestione Semplificata Magazzino</h3>
-                        <p class="cliente"><strong>Cliente:</strong> Piccolo E-commerce</p>
-                        <div class="dettagli">
-                            <p><strong>Problema:</strong> Tracciare entrate, uscite e giacenze con un file Excel complesso e lento che spesso si bloccava.</p>
-                            <p><strong>Soluzione:</strong> Ho ristrutturato il file, ottimizzato le formule e creato maschere di inserimento dati (UserForm) per guidare l'operatore, prevenendo errori.</p>
-                            <p><strong>Risultato:</strong> <span class="risultato-evidenziato">Inventario sempre corretto</span>, file più veloce del 70% e riduzione drastica degli errori di inserimento.</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -1030,58 +1052,10 @@
             </div>
         </section>
 
-  
-        <!-- SEZIONE "FA PER TE SE..." (AGGIORNATA CON IMMAGINE DEL PROBLEMA) -->
-        <section id="fa-per-te">
-            <div class="container">
-                <h2>Ti Riconosci in Questa Situazione?</h2>
-                <div class="fa-per-te-content">
-                    <div class="fa-per-te-image">
-                        <!-- Salva l'immagine nella cartella 'immagini/' -->
-                        <img src="foto2.jpg" alt="Utente frustrato di fronte a un errore di Excel">
-                    </div>
-                    <div class="fa-per-te-text">
-                        <h3>Questo servizio è la soluzione se...</h3>
-                        <ul>
-                            <li>Passi ore a copiare e incollare dati e pensi "Deve esserci un modo migliore".</li>
-                            <li>Il tuo file Excel aziendale è lento, pieno di errori e nessuno ha il coraggio di toccarlo.</li>
-                            <li>Hai bisogno di report e grafici chiari, ma crearli a mano ti porta via troppo tempo.</li>
-                            <li>Senti che stai usando solo il 10% del potenziale di Excel e vorresti automatizzare tutto.</li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEZIONE PROCESSO DI LAVORO -->
-        <section id="processo">
-            <div class="container">
-                <h2>Il Mio Processo in 3 Semplici Passi</h2>
-                <div class="processo-grid">
-                    <div class="processo-step">
-                        <div class="numero">1</div>
-                        <h3>Analisi del Problema</h3>
-                        <p>Mi contatti e mi spieghi la tua necessità. Analizziamo insieme la soluzione migliore.</p>
-                    </div>
-                    <div class="processo-step">
-                        <div class="numero">2</div>
-                        <h3>Preventivo Chiaro e Veloce</h3>
-                        <p>Ricevi un preventivo dettagliato, senza costi nascosti e con tempi di consegna definiti.</p>
-                    </div>
-                    <div class="processo-step">
-                        <div class="numero">3</div>
-                        <h3>Sviluppo e Consegna</h3>
-                        <p>Realizzo la soluzione su misura per te, garantendoti supporto e assistenza post-consegna.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- SEZIONE TESTIMONIANZE (AGGIORNATA CON FOTO) -->
         <section id="testimonianze">
             <div class="container">
-                <h2>Dicono di Me</h2>
+                <h2>I Miei Clienti Sono la Mia Migliore Garanzia</h2>
                 <div class="testimonial">
                     <div class="testimonial-image">
                         <img src="./testimonial1.jpg" alt="Foto di Luca Rossi">
@@ -1113,6 +1087,30 @@
                         <p>"La dashboard che Angelo ha creato per noi è diventata uno strumento indispensabile per le nostre riunioni strategiche."</p>
                         <p class="autore">- Marco Verdi, Direttore Commerciale</p>
                           <span class="star">&#9733 &#9733 &#9733 &#9733 &#9733</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE PROCESSO DI LAVORO -->
+        <section id="processo">
+            <div class="container">
+                <h2>Il Mio Processo in 3 Semplici Passi</h2>
+                <div class="processo-grid">
+                    <div class="processo-step">
+                        <div class="numero">1</div>
+                        <h3>Analisi del Problema</h3>
+                        <p>Mi contatti e mi spieghi la tua necessità. Analizziamo insieme la soluzione migliore.</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="numero">2</div>
+                        <h3>Preventivo Chiaro e Veloce</h3>
+                        <p>Ricevi un preventivo dettagliato, senza costi nascosti e con tempi di consegna definiti.</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="numero">3</div>
+                        <h3>Sviluppo e Consegna</h3>
+                        <p>Realizzo la soluzione su misura per te, garantendoti supporto e assistenza post-consegna.</p>
                     </div>
                 </div>
             </div>
