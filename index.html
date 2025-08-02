@@ -148,7 +148,7 @@
         /* --- Sezione Hero --- */
         .hero {
             background-color: var(--colore-sfondo);
-            padding: 30px 20px 60px;
+            padding: 10px 20px 60px;
 
             clip-path: polygon(
                     0 0,         /* angolo alto sinistro */
@@ -280,8 +280,9 @@
             font-weight: 500;
         }
         .hero-trust-signal .star {
-            color: #f39c12;
+            color: #039746;
             font-size: 1rem;
+            font-weight: 800;
         }
         
         /* --- MODIFICATO: Stili per la testimonianza con foto nell'hero --- */
@@ -785,6 +786,10 @@
             {
                 text-align: left;
             }
+            .hero-testimonial
+            {
+                text-align: left;
+            }
             .chi-sono-content {
                 flex-direction: column;
                 text-align: center;
@@ -804,8 +809,9 @@
 	        .container { padding: 5px; }
             .hero h1 { font-size: 2.5rem; }
             h2 { font-size: 1.8rem; }
-            .hero { 
-                padding: 40px 20px; 
+            .hero 
+            { 
+                padding: 10px 20px 40px;
                 clip-path: polygon(0 0, 100% 0, 100% 98%, 50% 100%, 0 98%);
             }
             .processo-grid, .testimonial {
@@ -895,7 +901,7 @@
 
                     <!-- MODIFICA: Segnale di fiducia più evidente -->
                     <p class="hero-trust-signal">
-                        <span class="star">★</span> Oltre 100 progetti completati <span class="star">★</span> Già scelto da 53+ aziende
+                        <span class="star">✓</span> Oltre 100 progetti completati <span class="star">✓</span> Già scelto da 53+ aziende
                     </p>
 
                 <!-- MODIFICATO: Testimonianza chiave ora con foto -->
@@ -904,8 +910,9 @@
                         <img src="./testimonial1.jpg" alt="Foto di Luca Rossi, cliente soddisfatto">
                     </div>
                     <div class="hero-testimonial-content">
+                        <span class="star">&#9733 &#9733 &#9733 &#9733 &#9733</span>
                         <p class="hero-testimonial-quote">"Angelo ha risolto un problema che ci bloccava da settimane in meno di 24 ore. Ottimo!"</p>
-                        <p class="hero-testimonial-author">- Luca R., Responsabile Amministrativo</p>
+                        <p class="hero-testimonial-author">Luca R., Responsabile Amministrativo</p>
                     </div>
                 </div>
 
