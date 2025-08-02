@@ -7,12 +7,21 @@
     <meta name="description" content="Sviluppatore VBA e consulente Excel freelance. Automatizzo i tuoi processi, creo macro personalizzate e risolvo i tuoi problemi con Excel. Contattami per un preventivo gratuito.">
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Google Fonts -->
+    <!-- PRECONNECT: Dice al browser di iniziare a connettersi a questi server il prima possibile -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- CARICAMENTO ASINCRONO GOOGLE FONTS -->
+    <!-- Prima pre-carichiamo il file senza bloccare la pagina... -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- ...poi forniamo un fallback per i browser che non supportano 'preload' -->
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap"></noscript>
+
+    <!-- CARICAMENTO ASINCRONO FONT AWESOME (ICONE) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
     <style>
         /* --- Reset e Stili Globali --- */
@@ -795,7 +804,10 @@
 	        .container { padding: 5px; }
             .hero h1 { font-size: 2.5rem; }
             h2 { font-size: 1.8rem; }
-            .hero { padding: 40px 20px; }
+            .hero { 
+                padding: 40px 20px; 
+                clip-path: polygon(0 0, 100% 0, 100% 98%, 50% 100%, 0 98%);
+            }
             .processo-grid, .testimonial {
                 flex-direction: column;
                 text-align: center;
