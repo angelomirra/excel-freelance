@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulente Excel e Sviluppatore VBA Freelance | Soluzioni Rapide</title>
+    <meta name="description" content="Sviluppatore VBA e consulente Excel freelance. Automatizzo i tuoi processi, creo macro personalizzate e risolvo i tuoi problemi con Excel. Contattami per un preventivo gratuito.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Reset e Stili Globali --- */
+        :root {
+            --colore-primario: #107C41; /* Verde Excel */
+            --colore-secondario: #2c3e50; /* Blu scuro/Grigio */
+            --colore-sfondo: #f4f6f9;
+            --colore-testo: #333;
+            --colore-cta: #ff8c00; /* Arancione per contrasto */
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: var(--colore-testo);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--colore-secondario);
+            font-weight: 700;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--colore-primario);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .evidenziato {
+            color: white;
+            background-color: var(--colore-primario);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* --- Stili per la Navigazione Sticky --- */
+        .main-nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Assicura che stia sempre sopra */
+            transition: box-shadow 0.3s ease;
+        }
+        .main-nav:hover {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .nav-brand {
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: var(--colore-secondario);
+        }
+        .nav-links a {
+            color: var(--colore-testo);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+        .nav-links .nav-cta {
+            background-color: var(--colore-cta);
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links .nav-cta:hover {
+            background-color: #e67e22;
+            color: #fff;
+        }
+
+        /* --- Sezione Hero --- */
+        .hero {
+            background-color: var(--colore-sfondo);
+            padding: 60px 20px;
+
+  	   clip-path: polygon(
+    		0 0,         /* angolo alto sinistro */
+    		100% 0,      /* angolo alto destro */
+    		100% 95%,    /* lato destro base */
+    		50% 100%,    /* punta centrale */
+    		0 95%        /* lato sinistro base */
+  	   );
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+            max-width: 55%;
+        }
+        .hero-image {
+            flex: 1;
+            max-width: 45%;
+            text-align: center;
+        }
+        .hero-image-description {
+            color: #555;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+	    border-radius: 50%;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .hero .sottotitolo {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .excel-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 20%;
+            height: auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* --- Pulsante CTA --- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--colore-cta);
+            color: #fff;
+            padding: 15px 50px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+        .chi-sono-cta {
+            margin-top: 20px;
+        }
+
+        .hero .post-cta-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        /* --- Sezione Clienti --- */
+        #clienti {
+            padding: 40px 10px;
+            background-color: #fff;
+	    margin: 0 auto;
+  	    max-width: 1100px;
+        }
+
+        .clienti-titolo {
+            text-align: center;
+            text-transform: uppercase;
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .clienti-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        .clienti-grid img {
+            max-height: 45px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: filter 0.3s, opacity 0.3s;
+        }
+        .clienti-grid img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- Sezione Servizi --- */
+        #servizi {
+            padding: 80px 20px;
+            background-color: var(--colore-sfondo);
+        }
+        .servizi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .servizio-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .servizio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .servizio-card .icona {
+            color: var(--colore-primario);
+            margin-bottom: 15px;
+            height: 48px;
+        }
+        .servizio-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Sezione Chi Sono --- */
+        #chi-sono {
+            padding: 80px 20px;
+        }
+        .chi-sono-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .chi-sono-image {
+            flex: 0 0 300px;
+        }
+        .chi-sono-image img {
+            width: 100%;
+            border-radius: 50%;
+	        transform: scaleX(-1);
+        }
+        .chi-sono-text {
+            flex: 1;
+        }
+        .chi-sono-text h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+        .chi-sono-text .punti-di-forza {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .chi-sono-text .punti-di-forza li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .chi-sono-text .punti-di-forza li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Stili per la nuova sezione "Fa per te se" --- */
+        #fa-per-te{
+            background-color: var(--colore-sfondo);
+            padding: 80px 20px;
+        }
+        .fa-per-te-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .fa-per-te-image {
+            flex: 1;
+            max-width: 45%;
+        }
+        .fa-per-te-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .fa-per-te-text {
+            flex: 1;
+            max-width: 55%;
+        }
+        .fa-per-te-text h3 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+        .fa-per-te-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .fa-per-te-text ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .fa-per-te-text ul li::before {
+            content: '❌'; /* Icona del problema */
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* --- Sezione Processo di Lavoro --- */
+        #processo {
+            padding: 80px 20px;
+        }
+        .processo-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .processo-step {
+            text-align: center;
+            max-width: 250px;
+        }
+        .processo-step .numero {
+            width: 60px;
+            height: 60px;
+            background-color: var(--colore-primario);
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 15px;
+        }
+        .processo-step h3 {
+            font-size: 1.2rem;
+        }
+
+        /* --- Sezione Testimonianze (con foto) --- */
+        #testimonianze {
+            padding: 80px 20px;
+            background-color: var(--colore-sfondo);
+        }
+        .testimonial {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background-color: #fff;
+            padding: 30px;
+            max-width: 750px;
+            margin: 0 auto 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+        .testimonial-image {
+            flex: 0 0 80px;
+        }
+        .testimonial-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+        .testimonial-content {
+            flex: 1;
+        }
+        .testimonial-content p {
+            font-style: italic;
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        .testimonial-content .autore {
+            font-weight: 600;
+            font-style: normal;
+            color: var(--colore-secondario);
+            text-align: left;
+        }
+        .star
+        {
+            color:orange;
+        }
+        
+        /* --- Sezione Contatti --- */
+        #contatti {
+            background-color: var(--colore-secondario);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        #contatti h2 {
+            color: #fff;
+        }
+        #contatti h2::after {
+             background-color: var(--colore-cta);
+        }
+        #contatti p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+        }
+        #contatti form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #contatti input, #contatti textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+        #contatti textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        #contatti .cta-button {
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1e2a38;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* --- Responsive --- */
+        @media (max-width: 900px) 
+        {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px; /* Ripristinato gap per mobile */
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+            .hero-image {
+                max-width: 100%;
+                margin-bottom: 0;
+            }
+            .chi-sono-content {
+                flex-direction: column;
+                text-align: center;
+            }
+	        .chi-sono-text .punti-di-forza {
+                text-align: left;
+            }
+            .fa-per-te-content {
+                flex-direction: column;
+            }
+            .fa-per-te-image, .fa-per-te-text {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 768px) 
+        {
+	        .container { padding: 5px; }
+            .hero h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            .hero { padding: 40px 20px; }
+            .processo-grid, .testimonial {
+                flex-direction: column;
+                text-align: center;
+            }
+            .testimonial {
+                gap: 20px;
+            }
+            .testimonial-content .autore {
+                text-align: center;
+            }
+            .testimonial-image img {
+                width: 50%;
+	        }
+
+            .fa-per-te-grid {
+                grid-template-columns: 1fr;
+            }
+            .processo-step {
+                text-align: center;
+                max-width: 100%; 
+            }
+
+            .nav-brand {
+                display: none; /* Nasconde il brand su mobile per fare spazio */
+            }
+            .nav-container {
+                justify-content: center;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            .nav-links .nav-cta
+            {
+                padding: 8px 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- NAVIGAZIONE STICKY -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-brand">Angelo Mirra | Consulente Excel</div>
+            <div class="nav-links">
+                <a href="#servizi">Servizi</a>
+                <a href="#testimonianze">Dicono di me</a>
+                <a href="#contatti" class="nav-cta">Sì, Voglio Un Aiuto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEZIONE HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Risolvo i Tuoi Problemi con Excel e VBA. Subito.</h1>
+                    <p class="sottotitolo">
+                        Dalla macro che non funziona all'automazione di complessi processi aziendali.
+			            Automatizzo il tuo Excel e <span class="evidenziato">risparmi ore di lavoro ogni settimana</span>.
+                    </p>
+                    <a href="#contatti" class="cta-button">Sì, Voglio Un Aiuto</a>
+		    <p class="post-cta-note">*In 2 anni ho aiutato oltre 53 tra aziende e professionisti a risparmiare tempo e risorse.
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <!-- Assicurati che questa sia una tua foto professionale -->
+                        <img src="./foto.jpg" alt="Angelo Mirra, Consulente Excel professionale">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/220px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png" alt="Logo Excel" class="excel-icon">
+                    </div>
+                    <p class="hero-image-description">Angelo Mirra<br>Consulente in Excel, VBA e Macro<br>per automatizzare il tuo lavoro</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sezione Loghi Clienti -->
+        <section id="clienti">
+		<div class="container">
+                <p class="clienti-titolo">Scelto da professionisti e aziende in tutta Italia</p>
+                <div class="clienti-grid">
+                    <!-- ## IMPORTANTE: Crea una cartella "loghi" e salva qui i file .png o .svg dei tuoi clienti ## -->
+            	    <img src="https://www.coral.eu/wp-content/uploads/2025/02/Coral-logo-2025.svg" alt="Logo Cliente 1">
+             	    <img src="https://www.mayailluminazione.com/wp-content/uploads/2021/05/black-maya-new.svg" alt="Logo Cliente 2">
+            	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_2rlM_0fvG2WBVU-OT-bqVGSJ7s96AzMQYg&s" alt="Logo Cliente 3">
+            	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ63SxkEF1yz2UKCqFv25HQIHinjeUxr91N8A&s" alt="Logo Cliente 4">
+            	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKkjp-N7TOKeM3m16VWqwilSLOayrgmqjlVg&s" alt="Logo Cliente 5">
+                </div>
+		</div>
+        </section> 
+
+        <!-- SEZIONE SERVIZI con Icone SVG Professionali -->
+        <section id="servizi">
+            <div class="container">
+                <h2>Cosa Posso Fare Per Te</h2>
+                <div class="servizi-grid">
+                    <div class="servizio-card">
+                        <div class="icona">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" /></svg>
+                        </div>
+                        <h3>Creazione Macro Personalizzate</h3>
+                        <p>Automatizzo qualsiasi task ripetitivo per farti risparmiare tempo prezioso ogni giorno.</p>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="icona">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+                        </div>
+                        <h3>Debug e Correzione Codice</h3>
+                        <p>Il tuo file .xlsm ha smesso di funzionare? Analizzo e correggo errori nel tuo codice VBA esistente.</p>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="icona">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" /></svg>
+                        </div>
+                        <h3>Automazione Reportistica</h3>
+                        <p>Genero report complessi, unisco file e aggrego dati da diverse fonti in modo automatico.</p>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="icona">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h12A2.25 2.25 0 0 0 20.25 14.25V3m-16.5 0h16.5m-16.5 0H3.75m16.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-1.5m-15-13.5H3.75m-1.5 0h1.5m13.5 0h.008v.008h-.008V3Zm-3 0h.008v.008h-.008V3Zm-3 0h.008v.008h-.008V3Zm-3 0h.008v.008h-.008V3Z" /></svg>
+                        </div>
+                        <h3>Dashboard Interattive</h3>
+                        <p>Creo cruscotti dinamici per visualizzare i tuoi dati, monitorare i KPI e prendere decisioni migliori.</p>
+                    </div>
+                     <div class="servizio-card">
+                        <div class="icona">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>
+                        </div>
+                        <h3>Integrazione Dati</h3>
+                        <p>Sviluppo soluzioni per far comunicare Excel con database, file CSV/PDF o altri software Office.</p>
+                    </div>
+                     <div class="servizio-card">
+                        <div class="icona">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6.375a.375.375 0 0 1 .375.375v1.5a.375.375 0 0 1-.375.375H9a.375.375 0 0 1-.375-.375v-1.5A.375.375 0 0 1 9 6.75ZM9 12.75h6.375a.375.375 0 0 1 .375.375v1.5a.375.375 0 0 1-.375.375H9a.375.375 0 0 1-.375-.375v-1.5A.375.375 0 0 1 9 12.75Z" /></svg>
+                        </div>
+                        <h3>Soluzioni Aziendali Complete</h3>
+                        <p>Dalla gestione magazzino alla creazione di piccoli CRM, realizzo applicativi basati su Excel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione Chi Sono -->
+        <section id="chi-sono">
+            <div class="container">
+                <h2>L'Esperto Dietro il Codice</h2>
+                <div class="chi-sono-content">
+                    <div class="chi-sono-image">
+                        <img src="./foto.jpg" alt="Foto profilo di Angelo Mirra">
+                    </div>
+                    <div class="chi-sono-text">
+                        <h3>Piacere, sono Angelo Mirra</h3>
+                        <p>
+                            Non sono solo uno sviluppatore, ma un problem-solver con una missione precisa: <strong>eliminare le attività manuali, ripetitive e frustranti</strong> che rallentano il tuo lavoro. Conosco il valore del tempo e la mia passione è trasformare complessi fogli di calcolo in strumenti efficienti e automatici.
+                        </p>
+                        <p>
+                            Traduco le tue esigenze in soluzioni software stabili, facili da usare e che portano risultati misurabili fin dal primo giorno.
+                        </p>
+			            <p>
+			                Oltre 100 progetti completati per aziende e liberi professionisti in tutta Italia.
+			            </p>
+                        <ul class="punti-di-forza">
+                            <li><strong>Approccio pratico:</strong> Mi concentro sul risultato finale, non solo sulla scrittura del codice.</li>
+                            <li><strong>Comunicazione chiara:</strong> Ti spiego ogni passaggio in modo semplice, senza tecnicismi incomprensibili.</li>
+                            <li><strong>Affidabilità e puntualità:</strong> Rispetto le scadenze e garantisco il mio lavoro.</li>
+                        </ul>
+ 			            <a href="#contatti" class="cta-button chi-sono-cta">Sì, Voglio Un Aiuto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  
+        <!-- SEZIONE "FA PER TE SE..." (AGGIORNATA CON IMMAGINE DEL PROBLEMA) -->
+        <section id="fa-per-te">
+            <div class="container">
+                <h2>Ti Riconosci in Questa Situazione?</h2>
+                <div class="fa-per-te-content">
+                    <div class="fa-per-te-image">
+                        <!-- Salva l'immagine nella cartella 'immagini/' -->
+                        <img src="foto2.jpg" alt="Utente frustrato di fronte a un errore di Excel">
+                    </div>
+                    <div class="fa-per-te-text">
+                        <h3>Questo servizio è la soluzione se...</h3>
+                        <ul>
+                            <li>Passi ore a copiare e incollare dati e pensi "Deve esserci un modo migliore".</li>
+                            <li>Il tuo file Excel aziendale è lento, pieno di errori e nessuno ha il coraggio di toccarlo.</li>
+                            <li>Hai bisogno di report e grafici chiari, ma crearli a mano ti porta via troppo tempo.</li>
+                            <li>Senti che stai usando solo il 10% del potenziale di Excel e vorresti automatizzare tutto.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE PROCESSO DI LAVORO -->
+        <section id="processo">
+            <div class="container">
+                <h2>Il Mio Processo in 3 Semplici Passi</h2>
+                <div class="processo-grid">
+                    <div class="processo-step">
+                        <div class="numero">1</div>
+                        <h3>Analisi del Problema</h3>
+                        <p>Mi contatti e mi spieghi la tua necessità. Analizziamo insieme la soluzione migliore.</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="numero">2</div>
+                        <h3>Preventivo Chiaro e Veloce</h3>
+                        <p>Ricevi un preventivo dettagliato, senza costi nascosti e con tempi di consegna definiti.</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="numero">3</div>
+                        <h3>Sviluppo e Consegna</h3>
+                        <p>Realizzo la soluzione su misura per te, garantendoti supporto e assistenza post-consegna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE TESTIMONIANZE (AGGIORNATA CON FOTO) -->
+        <section id="testimonianze">
+            <div class="container">
+                <h2>Dicono di Me</h2>
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="./testimonial1.jpg" alt="Foto di Luca Rossi">
+                    </div>
+                    <div class="testimonial-content">
+                        <p style="font-weight: bold;font-size: 1.3rem;">"Professionale e velocissimo!"</p>
+                        <p>"Ha automatizzato il nostro report settimanale, facendoci risparmiare 5 ore di lavoro ogni lunedì."</p>
+                        <p class="autore">- Luca Rossi, Responsabile Amministrativo </p>
+                        <span class="star">&#9733 &#9733 &#9733 &#9733 &#9733</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="./testimonial2.jpg" alt="Foto di Giulia Bianchi">
+                    </div>
+                    <div class="testimonial-content">
+                        <p style="font-weight: bold;font-size: 1.3rem;">"Consigliatissimo!"</p>
+                        <p>"Avevo un file Excel con una macro piena di errori. In poche ore, non solo l'ha corretta ma l'ha anche resa più veloce e stabile."</p>
+                        <p class="autore">- Giulia Bianchi, Ufficio Acquisti</p>
+                          <span class="star">&#9733 &#9733 &#9733 &#9733 &#9733</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="./testimonial3.jpg" alt="Foto di Marco Verdi">
+                    </div>
+                    <div class="testimonial-content">
+                         <p style="font-weight: bold;font-size: 1.3rem;">"Lavoro impeccabile."</p>
+                        <p>"La dashboard che Angelo ha creato per noi è diventata uno strumento indispensabile per le nostre riunioni strategiche."</p>
+                        <p class="autore">- Marco Verdi, Direttore Commerciale</p>
+                          <span class="star">&#9733 &#9733 &#9733 &#9733 &#9733</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE CONTATTI / CTA FINALE -->
+        <section id="contatti">
+            <div class="container">
+
+                <!-- Grafico in crescita SVG -->
+                <div style="width:200px; margin:auto;">
+                    <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sfondo -->
+                        <rect width="200" height="150" fill="#f9f9f9" rx="8" />
+
+                        <!-- Barre -->
+                        <rect x="30" y="90" width="20" height="40" fill="#4CAF50" rx="3"/>
+                        <rect x="70" y="70" width="20" height="60" fill="#4CAF50" rx="3"/>
+                        <rect x="110" y="50" width="20" height="80" fill="#4CAF50" rx="3"/>
+                        <rect x="150" y="30" width="20" height="100" fill="#4CAF50" rx="3"/>
+
+                        <!-- Freccia -->
+                        <polyline points="20,120 60,80 100,60 140,40 180,20"
+                                fill="none" stroke="#ff5722" stroke-width="4" />
+                        <polygon points="180,20 174,26 186,26" fill="#ff5722" />
+                    </svg>
+                </div>
+                
+                <h2>Pronto a Risolvere il Tuo Problema?</h2>
+                <p>
+                    Compila il modulo qui sotto descrivendo la tua esigenza.
+                    Ti risponderò <strong>entro 1 ora</strong> con un'analisi gratuita e un preventivo.
+                </p>
+                <!-- Assicurati di attivare il tuo indirizzo su formsubmit.co -->
+                <form action="https://formsubmit.co/angelo.ss@hotmail.it" method="POST">
+                    <input type="text" name="nome" placeholder="Il tuo nome" required>
+                    <input type="email" name="email" placeholder="La tua email" required>
+                    <textarea name="messaggio" placeholder="Descrivi qui il tuo problema o la tua necessità..." required></textarea>
+                    <button type="submit" class="cta-button" style="border:none;">Sì, Voglio Un Aiuto</button>
+                </form>
+                <p style="margin-top: 20px; font-size: 15px; text-align: left; color: #d3d3d3;">*Utilizzerò la tua email <strong>solo ed esclusivamente</strong> per rispondere alla tua richiesta.<br><strong>Non sarà mai</strong> ceduta a terzi.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Angelo Mirra - Specialista in Excel, VBA e Macro | P.IVA 05945478801</p>
+        </div>
+    </footer>
+
+</body>
+</html>
