@@ -89,6 +89,17 @@
             font-family: 'Poppins', sans-serif;
             color: var(--colore-secondario);
         }
+        .nav-brand a,
+        .nav-brand a:visited,
+
+        .nav-brand a:active {
+            color: var(--colore-secondario);
+            text-decoration: none; 
+        }
+
+        .nav-brand a:hover{
+            color: #e67e22;
+        }
         .nav-links a {
             color: var(--colore-testo);
             text-decoration: none;
@@ -116,13 +127,13 @@
             background-color: var(--colore-sfondo);
             padding: 60px 20px;
 
-  	   clip-path: polygon(
-    		0 0,         /* angolo alto sinistro */
-    		100% 0,      /* angolo alto destro */
-    		100% 95%,    /* lato destro base */
-    		50% 100%,    /* punta centrale */
-    		0 95%        /* lato sinistro base */
-  	   );
+            clip-path: polygon(
+                    0 0,         /* angolo alto sinistro */
+                    100% 0,      /* angolo alto destro */
+                    100% 95%,    /* lato destro base */
+                    50% 100%,    /* punta centrale */
+                    0 95%        /* lato sinistro base */
+            );
         }
         .hero-content {
             display: flex;
@@ -668,7 +679,7 @@
     <!-- NAVIGAZIONE STICKY -->
     <nav class="main-nav">
         <div class="container nav-container">
-            <div class="nav-brand">Angelo Mirra | Consulente Excel</div>
+            <div class="nav-brand"><a href="index.html">Angelo Mirra | Consulente Excel</a></div>
             <div class="nav-links">
                 <a href="#servizi">Servizi</a>
                 <a href="#testimonianze">Dicono di me</a>
