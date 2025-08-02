@@ -951,12 +951,19 @@
         </div>
     </footer>
 
-    <!--Start of Tawk.to Script-->
+    <!-- ============================================= -->
+    <!-- SCRIPT Tawk.to - MODIFICATO PER PERFORMANCE  -->
+    <!-- ============================================= -->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
         s1.async=true;
+        /* MODIFICA: Aggiunto 'defer' per migliorare il caricamento della pagina.
+           'async' inizia a scaricare lo script subito senza bloccare la pagina.
+           'defer' scarica lo script durante il parsing della pagina e lo esegue solo alla fine.
+           Usarli insieme dà un segnale forte ai browser moderni di non dare priorità a questo script. */
+        s1.defer=true; 
         s1.src='https://embed.tawk.to/688df0e4ddd4a019266fd622/1j1l79vji';
         s1.charset='UTF-8';
         s1.setAttribute('crossorigin','*');
