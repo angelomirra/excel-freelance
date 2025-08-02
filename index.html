@@ -7,6 +7,7 @@
     <meta name="description" content="Sviluppatore VBA e consulente Excel freelance. Automatizzo i tuoi processi, creo macro personalizzate e risolvo i tuoi problemi con Excel. Contattami per un preventivo gratuito.">
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,7 +122,20 @@
             background-color: #e67e22;
             color: #fff;
         }
-
+        .nav-links .telefono {
+            border: 1px solid var(--colore-primario);
+            padding: 7px 15px; /* Leggermente meno del CTA principale */
+            border-radius: 5px;
+            color: var(--colore-primario);
+            transition: all 0.3s ease;
+        }
+        .nav-links .telefono:hover {
+            background-color: var(--colore-primario);
+            color: #fff;
+        }
+        .nav-links .telefono i {
+            margin-right: 8px; /* Spazio tra icona e testo */
+        }
         /* --- Sezione Hero --- */
         .hero {
             background-color: var(--colore-sfondo);
@@ -832,9 +846,12 @@
             <div class="nav-brand"><a href="#">Angelo Mirra | Specialista Excel</a></div>
             <div class="nav-links">
                 <!--<a href="#servizi">Servizi</a>
-                <a href="#testimonianze">Dicono di me</a>-->
-                <a href="#casi-studio">Casi di Successo</a>
+                <a href="#testimonianze">Dicono di me</a>
+                <a href="#casi-studio">Casi di Successo</a>-->
+                <a href="tel:+390123456789" class="telefono"><i class="fa-solid fa-phone"></i> Chiamami Ora</a>
                 <a href="#contatti" class="nav-cta">Sì, Voglio Un'Analisi Gratuita</a>
+
+
             </div>
         </div>
     </nav>
@@ -1156,22 +1173,49 @@
         <section id="contatti">
             <div class="container">
 
-                <!-- Grafico in crescita SVG -->
-                <div style="width:200px; margin:auto;">
-                    <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Sfondo -->
-                        <rect width="200" height="150" fill="#f9f9f9" rx="8" />
+                <!-- Incolla questo SVG dove c'era il precedente nel file HTML -->
+                <div style="width:200px; margin:auto; margin-bottom: 20px;">
+                    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                        <title>Icona di trasformazione da Excel con errori a dashboard efficiente</title>
 
-                        <!-- Barre -->
-                        <rect x="30" y="90" width="20" height="40" fill="#4CAF50" rx="3"/>
-                        <rect x="70" y="70" width="20" height="60" fill="#4CAF50" rx="3"/>
-                        <rect x="110" y="50" width="20" height="80" fill="#4CAF50" rx="3"/>
-                        <rect x="150" y="30" width="20" height="100" fill="#4CAF50" rx="3"/>
+                        <!-- PARTE 1: Il Problema (Foglio con Errori) -->
+                        <g id="problema-excel-errori">
+                            <!-- Contenitore del foglio -->
+                            <path d="M10 15 H40 L50 25 V85 H10 Z" fill="#fff" stroke="#888" stroke-width="1"/>
+                            <path d="M40 15 V25 H50" fill="none" stroke="#888" stroke-width="1"/>
+                            
+                            <!-- Griglia e testi degli errori -->
+                            <rect x="15" y="30" width="30" height="15" fill="#fdecea" stroke="#f1c40f" />
+                            <text x="30" y="41" font-family="Consolas, monospace" font-size="8" fill="#c0392b" text-anchor="middle" font-weight="bold">#REF!</text>
 
-                        <!-- Freccia -->
-                        <polyline points="20,120 60,80 100,60 140,40 180,20"
-                                fill="none" stroke="#ff5722" stroke-width="4" />
-                        <polygon points="180,20 174,26 186,26" fill="#ff5722" />
+                            <rect x="15" y="50" width="30" height="15" fill="#fdecea" stroke="#f1c40f" />
+                            <text x="30" y="61" font-family="Consolas, monospace" font-size="8" fill="#c0392b" text-anchor="middle" font-weight="bold">#N/A</text>
+
+                            <rect x="15" y="70" width="30" height="15" fill="#fff" stroke="#ccc" />
+                            <text x="30" y="81" font-family="Consolas, monospace" font-size="8" fill="#555" text-anchor="middle">dati</text>
+                        </g>
+
+                        <!-- PARTE 2: La Trasformazione (Freccia) -->
+                        <g id="trasformazione-freccia">
+                            <line x1="65" y1="50" x2="95" y2="50" stroke="var(--colore-cta, #ff8c00)" stroke-width="3"/>
+                            <path d="M95 50 L88 45 M95 50 L88 55" stroke="var(--colore-cta, #ff8c00)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        </g>
+                        
+                        <!-- PARTE 3: La Soluzione (Dashboard Ordinata) - INVARIATA, è già ottima -->
+                        <g id="soluzione-dashboard">
+                            <path d="M110 15 H140 L150 25 V85 H110 Z" fill="#fff" stroke="var(--colore-primario, #107C41)" stroke-width="1.5"/>
+                            <path d="M140 15 V25 H150" fill="none" stroke="var(--colore-primario, #107C41)" stroke-width="1.5"/>
+                            <rect x="117" y="55" width="5" height="20" fill="#2ecc71"/>
+                            <rect x="125" y="45" width="5" height="30" fill="#2ecc71"/>
+                            <rect x="133" y="60" width="5" height="15" fill="#2ecc71"/>
+                            <line x1="115" y1="75" x2="145" y2="75" stroke="#ddd" stroke-width="1"/>
+                        </g>
+
+                        <!-- PARTE 4: La Garanzia (Spunta Verde) - INVARIATA -->
+                        <g id="garanzia-spunta-verde">
+                            <circle cx="165" cy="40" r="18" fill="#2ecc71" />
+                            <path d="M158 40 L163 45 L173 35" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
                     </svg>
                 </div>
                 
