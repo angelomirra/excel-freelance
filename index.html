@@ -171,7 +171,7 @@
             color: #555;
             margin-bottom: 30px;
         }
-         /* --- MODIFICA: Stili per la nuova lista di benefici --- */
+
         .hero-benefits {
             list-style: none;
             padding-left: 0;
@@ -191,7 +191,7 @@
             top: 2px;
             font-size: 1.1rem;
         }
-        /* --- FINE MODIFICA --- */
+   
         .image-wrapper {
             position: relative;
             display: inline-block;
@@ -244,7 +244,25 @@
             color: #f39c12;
             font-size: 1rem;
         }
-        /* --- FINE MODIFICA --- */
+        
+                /* --- NUOVO: Stili per la testimonianza nell'hero --- */
+        .hero-testimonial {
+            margin-top: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--colore-primario);
+            font-size: 0.95rem;
+        }
+        .hero-testimonial-quote {
+            font-style: italic;
+            color: #555;
+            margin: 0;
+        }
+        .hero-testimonial-author {
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            color: var(--colore-secondario);
+            margin-top: 5px;
+        }
 
         .hero .post-cta-note {
             font-size: 0.9rem;
@@ -547,6 +565,35 @@
         {
             color:orange;
         }
+
+        /* --- NUOVO: Stili per la sezione FAQ --- */
+        #faq {
+            padding: 80px 20px;
+            /*background-color: var(--colore-sfondo);*/
+        }
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-left: 4px solid var(--colore-primario);
+            padding: 20px 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .faq-item h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .faq-item p {
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
         
         /* --- Sezione Contatti --- */
         #contatti {
@@ -588,6 +635,26 @@
             cursor: pointer;
             width: 100%;
         }
+        /* --- NUOVO: Stili per la garanzia nel form contatti --- */
+        .contact-guarantee {
+            max-width: 600px;
+            margin: 20px auto 0 auto;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px dashed var(--colore-cta);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .contact-guarantee p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .contact-guarantee strong {
+            color: var(--colore-cta);
+        }
+
 
         /* --- Footer --- */
         footer {
@@ -679,7 +746,7 @@
     <!-- NAVIGAZIONE STICKY -->
     <nav class="main-nav">
         <div class="container nav-container">
-            <div class="nav-brand"><a href="index.html">Angelo Mirra | Consulente Excel</a></div>
+            <div class="nav-brand"><a href="#">Angelo Mirra | Consulente Excel</a></div>
             <div class="nav-links">
                 <a href="#servizi">Servizi</a>
                 <a href="#testimonianze">Dicono di me</a>
@@ -703,7 +770,7 @@
                         <li><strong>Elimina gli errori</strong> di copia-incolla e ottieni dati sempre affidabili.</li>
                         <li><strong>Trasforma fogli di calcolo complessi</strong> in strumenti efficienti e facili da usare.</li>
                     </ul>
-                    <!-- FINE MODIFICA -->
+   
 
                     <a href="#contatti" class="cta-button">Sì, Voglio Un Aiuto Ora</a>
 
@@ -711,7 +778,13 @@
                     <p class="hero-trust-signal">
                         <span class="star">★</span> Oltre 100 progetti completati <span class="star">★</span> Già scelto da 53+ aziende
                     </p>
-                    <!-- FINE MODIFICA -->
+
+                    <!-- NUOVO: Testimonianza chiave per fiducia immediata -->
+                    <div class="hero-testimonial">
+                        <p class="hero-testimonial-quote">"Ha risolto un problema che ci bloccava da mesi in meno di 24 ore. Incredibile."</p>
+                        <p class="hero-testimonial-author">- Luca R., Responsabile Amministrativo</p>
+                    </div>
+
                 </div>
                 <div class="hero-image">
                     <div class="image-wrapper">
@@ -797,7 +870,7 @@
         <!-- ================================== -->
         <section id="casi-studio">
             <div class="container">
-                <h2>Come Ho Aiutato Altri Come Te</h2>
+                <h2>Come Ho Aiutato Altri Come Te (Casi Reali)</h2>
                 <div class="casi-studio-grid">
 
                     <!-- Caso di Studio 1 -->
@@ -955,6 +1028,31 @@
             </div>
         </section>
 
+        <!-- NUOVO: Sezione FAQ -->
+        <section id="faq">
+            <div class="container">
+                <h2>Domande Frequenti</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Quanto costa il servizio?</h3>
+                        <p>Ogni progetto è diverso. Dopo aver analizzato la tua richiesta, ti fornirò un preventivo fisso e trasparente. Per problemi semplici, la soluzione può costare anche solo poche decine di euro. Il mio obiettivo è farti risparmiare molto più di quanto investi.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Quali sono i tempi di consegna?</h3>
+                        <p>Dipende dalla complessità. Molte richieste (correzioni di bug, piccole automazioni) vengono risolte in 24-48 ore. Per progetti più grandi, i tempi saranno chiaramente definiti nel preventivo.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Cosa succede se non sono soddisfatto?</h3>
+                        <p>La mia priorità è la tua soddisfazione. Offro una "Garanzia di Risultato": se la soluzione non funziona come concordato, la modifico finché non sei soddisfatto o non paghi nulla. Semplice e senza rischi per te.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>È necessario incontrarsi di persona?</h3>
+                        <p>No, lavoro con clienti in tutta Italia da remoto. Gestiamo tutto tramite email, telefono o videochiamata. È più efficiente e veloce per entrambi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SEZIONE CONTATTI / CTA FINALE -->
         <section id="contatti">
             <div class="container">
@@ -978,10 +1076,9 @@
                     </svg>
                 </div>
                 
-                <h2>Pronto a Risolvere il Tuo Problema?</h2>
+                <h2>Inizia a Risparmiare Tempo Oggi</h2>
                 <p>
-                    Compila il modulo qui sotto descrivendo la tua esigenza.
-                    Ti risponderò <strong>entro 1 ora</strong> con un'analisi gratuita e un preventivo.
+                    Descrivi la tua esigenza qui sotto. Ti risponderò <strong>entro 1 ora lavorativa</strong> con un'analisi gratuita e un preventivo senza impegno.
                 </p>
                 <!-- Assicurati di attivare il tuo indirizzo su formsubmit.co -->
                 <form action="https://formsubmit.co/angelo.ss@hotmail.it" method="POST">
@@ -1002,6 +1099,12 @@
                     <textarea name="messaggio" placeholder="Descrivi qui il tuo problema o la tua necessità..." required></textarea>
                     <button type="submit" class="cta-button" style="border:none;">Sì, Voglio Un Aiuto Ora</button>
                 </form>
+
+                  <!-- NUOVO: Garanzia Post-Invio -->
+                <div class="contact-guarantee">
+                    <p><strong>Garanzia di Risultato:</strong> Se la soluzione non risolve il problema concordato, non paghi nulla. Supporto post-consegna sempre incluso.</p>
+                </div>
+
                 <p style="margin-top: 20px; font-size: 15px; text-align: left; color: #d3d3d3;">*Utilizzerò la tua email <strong>solo ed esclusivamente</strong> per rispondere alla tua richiesta.<br><strong>Non sarà mai</strong> ceduta a terzi.</p>
             </div>
         </section>
